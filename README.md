@@ -53,6 +53,16 @@ After provision beanstalk console will be available at [http://localhost:7654](h
 
 ### Run as a Docker container
 
+All in One Beanstalkd server + admin panel
+
+~~~sh
+docker run -itd --name beanstalkd-master -p 2080:2080 -p 11300:11300 -e AUTH_USERNAME=admin -e AUTH_PASSWORD=888888 tekintian/alpine-beanstalkd:1.11-master
+~~
+
+
+- other
+
+
 Install [Docker](https://docs.docker.com/installation/) then build and run with the following command (from project root):
 
     docker build --rm -t beanstalk_console .

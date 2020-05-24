@@ -27,7 +27,16 @@ Change log on [Releases](https://github.com/ptrofimov/beanstalk_console/releases
 
 **Installation**
 
-### Use composer (*recommended*)
+## All in One Beanstalkd server + admin panel (*recommended*)
+
+~~~sh
+docker run -itd --name beanstalkd-master -p 2080:2080 -p 11300:11300 -e AUTH_USERNAME=admin -e AUTH_PASSWORD=888888 tekintian/alpine-beanstalkd:1.11-master
+~~~
+
+服务端和控制端容器一体,如果要管理多个服务器可 增加环境变量 -e BEANSTALK_SERVERS="127.0.0.1:11300,192.168.2.8:11300"
+
+
+### Use composer 
 
 If you don't have Composer yet, download it following the instructions on http://getcomposer.org/ or just run the following command:
 
@@ -52,15 +61,6 @@ After provision beanstalk console will be available at [http://localhost:7654](h
 [Download](https://github.com/ptrofimov/beanstalk_console/archive/master.zip), unzip files to your *www* directory and launch from *public* directory, enjoy!
 
 ### Run as a Docker container
-
-All in One Beanstalkd server + admin panel
-
-~~~sh
-docker run -itd --name beanstalkd-master -p 2080:2080 -p 11300:11300 -e AUTH_USERNAME=admin -e AUTH_PASSWORD=888888 tekintian/alpine-beanstalkd:1.11-master
-~~
-
-
-- other
 
 
 Install [Docker](https://docs.docker.com/installation/) then build and run with the following command (from project root):

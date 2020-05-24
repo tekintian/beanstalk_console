@@ -33,7 +33,7 @@ Change log on [Releases](https://github.com/ptrofimov/beanstalk_console/releases
 docker run -itd --name beanstalkd-master -p 2080:2080 -p 11300:11300 -e AUTH_USERNAME=admin -e AUTH_PASSWORD=888888 tekintian/alpine-beanstalkd:1.11-master
 ~~~
 
-服务端和控制端容器一体,如果要管理多个服务器可 增加环境变量 -e BEANSTALK_SERVERS="127.0.0.1:11300,192.168.2.8:11300"
+for admin many beanstalk servers, just add  -e BEANSTALK_SERVERS="127.0.0.1:11300,192.168.2.8:11300, ....... "
 
 
 ### Use composer 
